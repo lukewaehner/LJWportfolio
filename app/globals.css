@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  --line-color: #e5e7eb;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+@keyframes rotateAndPulse {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  25% {
+    transform: translateY(10%) translateX(-6%) scale(0.8);
+  }
+  50% {
+    transform: translateY(15%) translateX(-12%) scale(0.65);
+  }
+  75% {
+    transform: translateY(5%) translateX(-6%) scale(0.7);
+  }
+}
+
+.float-animation {
+  animation: rotateAndPulse 12s ease-in-out infinite;
+}
