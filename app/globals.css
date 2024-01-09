@@ -13,3 +13,42 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+
+@keyframes rotateAndPulse {
+  0%,
+  100% {
+    transform: translateY(0) translateX(40%) scale(1);
+  }
+  25% {
+    transform: translateY(10%) translateX(30%) scale(0.7);
+  }
+  50% {
+    transform: translateY(20%) translateX(25%) scale(1);
+  }
+  75% {
+    transform: translateY(10%) translateX(30%) scale(1.1);
+  }
+}
+
+@keyframes rotateAndPulse2 {
+  0%,
+  100% {
+    transform: translateY(20%) translateX(0) scale(1);
+  }
+  25% {
+    transform: translateY(35%) translateX(10%) scale(1.1);
+  }
+  50% {
+    transform: translateY(25%) translateX(20%) scale(1);
+  }
+  75% {
+    transform: translateY(30%) translateX(10%) scale(0.7);
+  }
+}
+.blob-animation {
+  animation: rotateAndPulse 12s linear infinite;
+}
+
+.blob-animation2 {
+  animation: rotateAndPulse2 12s linear infinite;
+}
