@@ -139,7 +139,7 @@
   },
   "edgeSSRModuleMapping": {},
   "clientModules": {
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/client/components/error-boundary.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -147,7 +147,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/esm/client/components/error-boundary.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/esm/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -155,7 +155,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/client/components/app-router.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -163,7 +163,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/esm/client/components/app-router.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/esm/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -171,7 +171,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/client/components/layout-router.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -179,7 +179,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/esm/client/components/layout-router.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/esm/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -187,7 +187,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/client/components/render-from-template-context.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -195,7 +195,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -203,7 +203,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -211,7 +211,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -219,7 +219,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/about.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/about.tsx": {
       "id": "(app-client)/./components/about.tsx",
       "name": "*",
       "chunks": [
@@ -227,7 +227,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/contact.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/contact.tsx": {
       "id": "(app-client)/./components/contact.tsx",
       "name": "*",
       "chunks": [
@@ -235,7 +235,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/experience.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/experience.tsx": {
       "id": "(app-client)/./components/experience.tsx",
       "name": "*",
       "chunks": [
@@ -243,7 +243,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/intro.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/intro.tsx": {
       "id": "(app-client)/./components/intro.tsx",
       "name": "*",
       "chunks": [
@@ -251,7 +251,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/projects.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/projects.tsx": {
       "id": "(app-client)/./components/projects.tsx",
       "name": "*",
       "chunks": [
@@ -259,7 +259,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/section-divider.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/section-divider.tsx": {
       "id": "(app-client)/./components/section-divider.tsx",
       "name": "*",
       "chunks": [
@@ -267,7 +267,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/skills.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/skills.tsx": {
       "id": "(app-client)/./components/skills.tsx",
       "name": "*",
       "chunks": [
@@ -275,7 +275,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/react-hot-toast/dist/index.mjs": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/react-hot-toast/dist/index.mjs": {
       "id": "(app-client)/./node_modules/react-hot-toast/dist/index.mjs",
       "name": "*",
       "chunks": [
@@ -283,7 +283,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
+    "/Users/lukewaehner/Repos/LJWportfolio/node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
       "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
       "name": "*",
       "chunks": [
@@ -291,7 +291,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/header.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/header.tsx": {
       "id": "(app-client)/./components/header.tsx",
       "name": "*",
       "chunks": [
@@ -299,7 +299,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/components/theme-switch.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/components/theme-switch.tsx": {
       "id": "(app-client)/./components/theme-switch.tsx",
       "name": "*",
       "chunks": [
@@ -307,7 +307,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/context/active-section-context.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/context/active-section-context.tsx": {
       "id": "(app-client)/./context/active-section-context.tsx",
       "name": "*",
       "chunks": [
@@ -315,7 +315,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/context/theme-context.tsx": {
+    "/Users/lukewaehner/Repos/LJWportfolio/context/theme-context.tsx": {
       "id": "(app-client)/./context/theme-context.tsx",
       "name": "*",
       "chunks": [
@@ -323,7 +323,7 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWPortfolio/app/globals.css": {
+    "/Users/lukewaehner/Repos/LJWportfolio/app/globals.css": {
       "id": "(app-client)/./app/globals.css",
       "name": "*",
       "chunks": [
@@ -333,10 +333,10 @@
     }
   },
   "entryCSSFiles": {
-    "/Users/lukewaehner/Repos/LJWPortfolio/app/page": [
+    "/Users/lukewaehner/Repos/LJWportfolio/app/page": [
       "static/css/app/page.css"
     ],
-    "/Users/lukewaehner/Repos/LJWPortfolio/app/layout": [
+    "/Users/lukewaehner/Repos/LJWportfolio/app/layout": [
       "static/css/app/layout.css"
     ]
   }
