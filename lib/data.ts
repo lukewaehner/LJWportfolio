@@ -38,7 +38,7 @@ export const experiencesData = [
     title: "Graduated Highschool",
     location: "Guilford, CT",
     description:
-      "Guilford Highschool graduate with High Honors and a 4.01 GPA. Apart of Music and Spanish.",
+      "I graduated from Guilford Highschool with High Honors and a GPA of 4.0. I was member of the National and Spanish Honors Society, acting as Treasurer for the latter. Outside of school, I tutored students at Mathnasium, and was a member of the GHS Ski Team, and Jazz Ensemble.",
     icon: React.createElement(FaSchool),
     date: "2018-2022",
   },
@@ -52,9 +52,9 @@ export const experiencesData = [
   },
   {
     title: "Programming Journey",
-    location: "Everywhere",
+    location: "TBD",
     description:
-      "I spend every day programming, it is truly the only thing I want to do day-in and day-out. I am currently learning Next.js and TypeScript to expand my web-application portfolio and skills.",
+      "I spend most days programming, it is truly the only thing I want to do day-in and day-out. I am currently learning Next.js and TypeScript to expand my web-application portfolio and skills.",
     icon: React.createElement(FaReact),
     date: "2022 - present",
   },
