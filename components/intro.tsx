@@ -59,14 +59,14 @@ export default function Intro() {
               height="192"
               quality="95"
               priority={true}
-              className="h-96 w-96 rounded-full object-cover border-[0.35rem] border-white shadow-xl hover:border-blue-500 transition duration-300"
+              className="h-48 w-48 sm:h-96 sm:w-96 rounded-full object-cover border-[0.35rem] border-white shadow-xl hover:border-blue-500 transition duration-300"
             />
           </motion.div>
         </div>
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium-light !leading-[1.5] sm:text-6xl"
+        className="mb-10 mt-4 px-4 text-xl font-medium-light !leading-[1.5] sm:text-6xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >

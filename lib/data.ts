@@ -7,7 +7,6 @@ import StockChartImg from "@/public/StockChart.png";
 import SketchBookImg from "@/public/sketchbook.png";
 
 function getOperatingSystem() {
-  const userAgent = window.navigator.userAgent;
   const platform = window.navigator.platform;
   const macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"];
   const windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"];
@@ -54,10 +53,10 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated Highschool",
+    title: "Guilford Highschool Graduate",
     location: "Guilford, CT",
     description:
-      "I graduated from Guilford Highschool with High Honors and a GPA of 4.0. I was member of the National and Spanish Honors Society, acting as Treasurer for the latter. Outside of school, I tutored students at Mathnasium, and was a member of the GHS Ski Team, and Jazz Ensemble.",
+      "I graduated with High Honors and a GPA of 4.0. I was member of the National and Spanish Honors Society, acting as Treasurer for the latter. Outside of school, I tutored students at Mathnasium, and was a member of the GHS Ski Team, and Jazz Ensemble.",
     icon: React.createElement(FaSchool),
     date: "2018-2022",
   },
@@ -87,7 +86,6 @@ export const projectsData = [
     tags: ["HTML", "Parallax-CSS", "JS", "Framer-Motion", "Fun"],
     imageUrl: RoShamBoImg,
     projectUrl: "https://lukewaehner.github.io/RoShamBo/",
-    // downloadUrl: "/DownloadStockChart.zip",
   },
   {
     title: "StockChart",
