@@ -53,7 +53,7 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Guilford Highschool Graduate",
+    title: "Guilford High School Graduate",
     location: "Guilford, CT",
     description:
       "I graduated with High Honors and a GPA of 4.0. I was member of the National and Spanish Honors Society, acting as Treasurer for the latter. Outside of school, I tutored students at Mathnasium, and was a member of the GHS Ski Team, and Jazz Ensemble.",
