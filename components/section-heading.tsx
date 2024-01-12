@@ -29,7 +29,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="text-7xl font-medium capitalize mb-8 text-center"
+      className="text-5xl font-medium capitalize mb-8 text-center sm:text-7xl"
     >
       {children}
     </motion.h2>
