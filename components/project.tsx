@@ -5,7 +5,9 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & {
+  downloadUrl?: string;
+};
 
 export default function Project({
   title,
@@ -13,6 +15,7 @@ export default function Project({
   tags,
   imageUrl,
   projectUrl,
+  downloadUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -45,6 +48,15 @@ export default function Project({
               className="mt-2 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
             >
               View Project
+            </a>
+          )}
+          {downloadUrl && (
+            <a
+              href={downloadUrl}
+              download
+              className="mt-2 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
+            >
+              Download
             </a>
           )}
           <ul className="flex flex-wrap mt-4 pt-2 gap-2 sm:mt-auto">

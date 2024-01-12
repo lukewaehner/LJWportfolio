@@ -6,6 +6,25 @@ import RoShamBoImg from "@/public/RPSScreenshot-1.png";
 import StockChartImg from "@/public/StockChart.png";
 import SketchBookImg from "@/public/sketchbook.png";
 
+function getOperatingSystem() {
+  const userAgent = window.navigator.userAgent;
+  const platform = window.navigator.platform;
+  const macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"];
+  const windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"];
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    return "mac";
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    return "windows";
+  }
+  return "other";
+}
+
+const os = getOperatingSystem();
+
+const downloadUrlChart =
+  os === "mac" ? "/StockChartDownload-MacOS.zip" : "/StockCharts-Windows.exe";
+
 export const links = [
   {
     name: "Home",
@@ -65,30 +84,33 @@ export const projectsData = [
     title: "Rock Paper Scissors",
     description:
       "Front-end Heavy Rock Paper Scissors game with 3d parallax effect. Built with HTML, CSS, JS and uses framer-motion",
-    tags: ["HTML", "Parallax-CSS", "JS", "Framer-Motion"],
+    tags: ["HTML", "Parallax-CSS", "JS", "Framer-Motion", "Fun"],
     imageUrl: RoShamBoImg,
-    projectUrl: "https://github.com/lukewaehner",
+    projectUrl: "https://lukewaehner.github.io/RoShamBo/",
+    // downloadUrl: "/DownloadStockChart.zip",
   },
   {
     title: "StockChart",
     description:
       "Stock Chart created for business school, built in Python and integrated into a web app with Flask module.",
-    tags: ["Python", "Flask", "CSS", "yFinance", "Stochastics"],
+    tags: ["Python", "Flask", "yFinance", "Stochastics"],
     imageUrl: StockChartImg,
-    projectUrl: "https://github.com/lukewaehner",
+    projectUrl: "https://github.com/lukewaehner/StockCharts_Clone",
+    downloadUrl: downloadUrlChart,
   },
   {
     title: "Sketchbook",
     description:
       "A simple sketchbook powered by the simple three frontend languages. Using eventhandlers through JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript", "Fun"],
+    tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
     imageUrl: SketchBookImg,
-    projectUrl: "https://github.com/lukewaehner",
+    projectUrl: "https://lukewaehner.github.io/SketchBoard/",
   },
 ] as const;
 
 type ProjectProps = (typeof projectsData)[number] & {
   projectUrl?: string;
+  downloadUrl: "";
 };
 
 export const skillsData = [
