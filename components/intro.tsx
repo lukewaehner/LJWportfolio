@@ -75,7 +75,7 @@ export default function Intro() {
           Luke.
         </span>
         <br />
-        I'm an aspiring{" "}
+        I'm an aspiring <br className="sm:hidden" />
         <span
           ref={typedTarget}
           className="font-bold hover:text-blue-500 transition duration-300"
