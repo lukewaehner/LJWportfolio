@@ -91,7 +91,7 @@ export const projectsData = [
     title: "StockChart",
     description:
       "Stock Chart created for business school, built in Python and integrated into a web app with Flask module.",
-    tags: ["Python", "Flask", "yFinance", "Stochastics"],
+    tags: ["Python", "Flask", "yFinance"],
     imageUrl: StockChartImg,
     projectUrl: "https://github.com/lukewaehner/StockCharts_Clone",
     downloadUrl: downloadUrlChart,
@@ -103,6 +103,22 @@ export const projectsData = [
     tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
     imageUrl: SketchBookImg,
     projectUrl: "https://lukewaehner.github.io/SketchBoard/",
+  },
+  {
+    title: "News Scraper",
+    description:
+      "A command-line python script that hooks the latest news articles for a specific publically traded company on the New York Stock Exchange.",
+    tags: ["Python", ".EXE", "CLI"],
+    imageUrl: SketchBookImg,
+    projectUrl: "https://github.com/lukewaehner/NewsScraper",
+  },
+  {
+    title: "Customizable Portfolio",
+    description:
+      "A simple sketchbook powered by the simple three frontend languages. Using eventhandlers through JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
+    imageUrl: SketchBookImg,
+    projectUrl: "https://lukewaehner.github.io/customizable-portfolio/",
   },
 ] as const;
 
