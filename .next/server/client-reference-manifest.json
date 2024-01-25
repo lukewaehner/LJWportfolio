@@ -120,17 +120,17 @@
         "async": false
       }
     },
-    "(app-client)/./context/active-section-context.tsx": {
+    "(app-client)/./context/theme-context.tsx": {
       "*": {
-        "id": "(sc_client)/./context/active-section-context.tsx",
+        "id": "(sc_client)/./context/theme-context.tsx",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./context/theme-context.tsx": {
+    "(app-client)/./context/active-section-context.tsx": {
       "*": {
-        "id": "(sc_client)/./context/theme-context.tsx",
+        "id": "(sc_client)/./context/active-section-context.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -307,16 +307,16 @@
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWportfolio/context/active-section-context.tsx": {
-      "id": "(app-client)/./context/active-section-context.tsx",
+    "/Users/lukewaehner/Repos/LJWportfolio/context/theme-context.tsx": {
+      "id": "(app-client)/./context/theme-context.tsx",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
-    "/Users/lukewaehner/Repos/LJWportfolio/context/theme-context.tsx": {
-      "id": "(app-client)/./context/theme-context.tsx",
+    "/Users/lukewaehner/Repos/LJWportfolio/context/active-section-context.tsx": {
+      "id": "(app-client)/./context/active-section-context.tsx",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"

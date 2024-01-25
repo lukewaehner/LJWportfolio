@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import RoShamBoImg from "@/public/RPSScreenshot-1.png";
 import StockChartImg from "@/public/StockChart.png";
 import SketchBookImg from "@/public/sketchbook.png";
+import WealthLLM from "@/public/WealthLLManagement.png";
 
 function getOperatingSystem() {
   const platform = window.navigator.platform;
@@ -80,12 +81,12 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Rock Paper Scissors",
+    title: "WealthLLManagement",
     description:
-      "Front-end Heavy Rock Paper Scissors game with 3d parallax effect. Built with HTML, CSS, JS and uses framer-motion",
-    tags: ["HTML", "Parallax-CSS", "JS", "Framer-Motion", "Fun"],
-    imageUrl: RoShamBoImg,
-    projectUrl: "https://lukewaehner.github.io/RoShamBo/",
+      "NLP Python bot that uses a pretrained LLM hooked to a pdf opener to give answer questions on financial documents.",
+    tags: ["NLP AI", "PyTorch", "PyTesserect", "Py2PDF", "Streamlit"],
+    imageUrl: WealthLLM,
+    projectUrl: "https://github.com/lukewaehner/WealthLLManagement",
   },
   {
     title: "StockChart",
@@ -97,20 +98,28 @@ export const projectsData = [
     downloadUrl: downloadUrlChart,
   },
   {
-    title: "Sketchbook",
-    description:
-      "A simple sketchbook powered by the simple three frontend languages. Using eventhandlers through JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
-    imageUrl: SketchBookImg,
-    projectUrl: "https://lukewaehner.github.io/SketchBoard/",
-  },
-  {
     title: "News Scraper",
     description:
       "A command-line python script that hooks the latest news articles for a specific publically traded company on the New York Stock Exchange.",
     tags: ["Python", ".EXE", "CLI"],
     imageUrl: SketchBookImg,
     projectUrl: "https://github.com/lukewaehner/NewsScraper",
+  },
+  {
+    title: "Rock Paper Scissors",
+    description:
+      "Front-end Heavy Rock Paper Scissors game with 3d parallax effect. Built with HTML, CSS, JS and uses framer-motion",
+    tags: ["HTML", "Parallax-CSS", "JS", "Framer-Motion", "Fun"],
+    imageUrl: RoShamBoImg,
+    projectUrl: "https://lukewaehner.github.io/RoShamBo/",
+  },
+  {
+    title: "Sketchbook",
+    description:
+      "A simple sketchbook powered by the simple three frontend languages. Using eventhandlers through JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
+    imageUrl: SketchBookImg,
+    projectUrl: "https://lukewaehner.github.io/SketchBoard/",
   },
   {
     title: "Customizable Portfolio",
@@ -140,7 +149,8 @@ export const skillsData = [
   "React",
   "Next.js",
   "Node.js",
-  "Git",
-  "Tailwind",
+  "TailwindCSS",
+  "Sass",
   "Github",
+  "Git",
 ] as const;
