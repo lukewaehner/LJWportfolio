@@ -89,14 +89,7 @@ export const projectsData = [
     imageUrl: BussingNews,
     projectUrl: "https://github.com/lukewaehner/BussingNews",
   },
-  {
-    title: "WealthLLManagement",
-    description:
-      "NLP Python bot that uses a pretrained LLM hooked to a pdf opener to give answer questions on financial documents.",
-    tags: ["NLP AI", "PyTorch", "PyTesserect", "Py2PDF", "Streamlit"],
-    imageUrl: WealthLLM,
-    projectUrl: "https://github.com/lukewaehner/WealthLLManagement",
-  },
+
   {
     title: "StockChart",
     description:
@@ -106,7 +99,14 @@ export const projectsData = [
     projectUrl: "https://github.com/lukewaehner/StockCharts_Clone",
     downloadUrl: downloadUrlChart,
   },
-
+  {
+    title: "WealthLLManagement",
+    description:
+      "NLP Python bot that uses a pretrained LLM hooked to a pdf opener to give answer questions on financial documents.",
+    tags: ["NLP AI", "PyTorch", "PyTesserect", "Py2PDF", "Streamlit"],
+    imageUrl: WealthLLM,
+    projectUrl: "https://github.com/lukewaehner/WealthLLManagement",
+  },
   {
     title: "Rock Paper Scissors",
     description:
