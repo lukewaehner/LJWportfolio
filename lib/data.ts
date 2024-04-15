@@ -6,6 +6,7 @@ import RoShamBoImg from "@/public/RPSScreenshot-1.png";
 import StockChartImg from "@/public/StockChart.png";
 import SketchBookImg from "@/public/sketchbook.png";
 import WealthLLM from "@/public/WealthLLManagement.png";
+import BussingNews from "@/public/BussingNews.png";
 
 function getOperatingSystem() {
   const platform = window.navigator.platform;
@@ -81,6 +82,14 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Fullstack News Application",
+    description:
+      "Python scraper bots that scrape news articles and stores and displays them with MERN. Currently offline as proxies are expensive!",
+    tags: ["Python", "MERN", "Fullstack"],
+    imageUrl: BussingNews,
+    projectUrl: "https://github.com/lukewaehner/BussingNews",
+  },
+  {
     title: "WealthLLManagement",
     description:
       "NLP Python bot that uses a pretrained LLM hooked to a pdf opener to give answer questions on financial documents.",
@@ -97,14 +106,7 @@ export const projectsData = [
     projectUrl: "https://github.com/lukewaehner/StockCharts_Clone",
     downloadUrl: downloadUrlChart,
   },
-  {
-    title: "News Scraper",
-    description:
-      "A command-line python script that hooks the latest news articles for a specific publically traded company on the New York Stock Exchange.",
-    tags: ["Python", ".EXE", "CLI"],
-    imageUrl: SketchBookImg,
-    projectUrl: "https://github.com/lukewaehner/NewsScraper",
-  },
+
   {
     title: "Rock Paper Scissors",
     description:
@@ -120,14 +122,6 @@ export const projectsData = [
     tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
     imageUrl: SketchBookImg,
     projectUrl: "https://lukewaehner.github.io/SketchBoard/",
-  },
-  {
-    title: "Customizable Portfolio",
-    description:
-      "A simple sketchbook powered by the simple three frontend languages. Using eventhandlers through JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
-    imageUrl: SketchBookImg,
-    projectUrl: "https://lukewaehner.github.io/customizable-portfolio/",
   },
 ] as const;
 
