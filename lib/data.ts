@@ -1,11 +1,10 @@
 import React from "react";
-import { FaReact } from "react-icons/fa";
+import { FaChartLine, FaReact } from "react-icons/fa";
 import { FaSchool } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import RoShamBoImg from "@/public/RPSScreenshot-1.png";
+
 import StockChartImg from "@/public/StockChart.png";
-import SketchBookImg from "@/public/sketchbook.png";
-import WealthLLM from "@/public/WealthLLManagement.png";
+import HFTLedgerImg from "@/public/rust-hft-book.png";
 import BussingNews from "@/public/BussingNews.png";
 
 function getOperatingSystem() {
@@ -55,73 +54,64 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Guilford High School Graduate",
-    location: "Guilford, CT",
+    title: "Full Stack Software Engineer",
+    location: "Code Works, Boston, MA",
     description:
-      "I graduated with High Honors and a GPA of 4.0. I was member of the National and Spanish Honors Society, acting as Treasurer for the latter. Outside of school, I tutored students at Mathnasium, and was a member of the GHS Ski Team, and Jazz Ensemble.",
-    icon: React.createElement(FaSchool),
-    date: "2018-2022",
+      "Developed custom CRM systems using Google Workspace APIs, reducing client onboarding time by 55% for 200+ clients. Built dynamic web interfaces and automated workflows integrating Google Sheets, Gmail, and Calendar for real-time data synchronization.",
+    icon: React.createElement(FaReact),
+    date: "May 2024 - Sep 2025",
   },
   {
-    title: "Fordham University Student",
-    location: "Bronx, NY",
+    title: "Computer Science & Fintech Student",
+    location: "Northeastern University, Boston, MA",
     description:
-      "I completed three semesters at Fordham university of Information Systems curriculum, and one semester of Computer Science. Reserach Director of the Fordham Computer Science Society, Dean's List Student, Woolworth Scholar, Manresa Scholar, and Intramural Soccer Player.",
+      "Pursuing dual degree in Computer Science and Fintech with 3.83 GPA. Dean's List student focused on algorithms, data structures, and systems programming. Built high-performance trading systems and full-stack applications.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2024 - Dec 2026",
+  },
+  {
+    title: "Wealth Management Intern",
+    location: "Riverside Financial, CT",
+    description:
+      "Automated ETF data collection using Morningstar API and VBA, reducing manual retrieval time by 70%. Conducted technical analysis and portfolio risk assessment supporting $100M+ in assets.",
+    icon: React.createElement(FaChartLine),
+    date: "May 2023 - Aug 2023",
+  },
+  {
+    title: "Finance Student",
+    location: "Fordham University, Bronx, NY",
+    description:
+      "Earned B.S. in Finance with 3.9 GPA. Woolworth Scholar, Manresa Scholar, and Best Business Plan Award recipient. Research Director of Computer Science Society. Laid foundation for transition into software engineering.",
     icon: React.createElement(LuGraduationCap),
     date: "2022 - 2024",
-  },
-  {
-    title: "Programming Journey",
-    location: "TBD",
-    description:
-      "I spend most days programming, it is truly the only thing I want to do day-in and day-out. I am currently learning Next.js and TypeScript to expand my web-application portfolio and skills.",
-    icon: React.createElement(FaReact),
-    date: "2022 - present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "Fullstack News Application",
+    title: "Rust Order Book Exchange",
     description:
-      "Python scraper bots that scrape news articles and stores and displays them with MERN. Currently offline as proxies are expensive!",
-    tags: ["Python", "MERN", "Fullstack"],
-    imageUrl: BussingNews,
-    projectUrl: "https://github.com/lukewaehner/BussingNews",
+      "High-frequency trading engine processing 200k+ trades/sec with 13μs latency. Features async REST APIs and WebSocket trade streaming.",
+    tags: ["Rust", "Axum", "Tokio", "WebSockets", "HFT"],
+    imageUrl: HFTLedgerImg,
+    projectUrl: "https://github.com/lukewaehner/HFT-Ledger",
   },
-
   {
-    title: "StockChart",
+    title: "Stockchart Pro",
     description:
-      "Stock Chart created for business school, built in Python and integrated into a web app with Flask module.",
-    tags: ["Python", "Flask", "yFinance"],
+      "Real-time stock analysis app with advanced technical indicators (RSI, MACD, Moving Averages). Built with Python, Dash, and Plotly with standalone executable distribution.",
+    tags: ["Python", "Dash", "Plotly", "yFinance", "PyInstaller"],
     imageUrl: StockChartImg,
     projectUrl: "https://github.com/lukewaehner/StockCharts_Clone",
     downloadUrl: downloadUrlChart,
   },
   {
-    title: "WealthLLManagement",
+    title: "Full Stack News Consolidator",
     description:
-      "NLP Python bot that uses a pretrained LLM hooked to a pdf opener to give answer questions on financial documents.",
-    tags: ["NLP AI", "PyTorch", "PyTesserect", "Py2PDF", "Streamlit"],
-    imageUrl: WealthLLM,
-    projectUrl: "https://github.com/lukewaehner/WealthLLManagement",
-  },
-  {
-    title: "Rock Paper Scissors",
-    description:
-      "Front-end Heavy Rock Paper Scissors game with 3d parallax effect. Built with HTML, CSS, JS and uses framer-motion",
-    tags: ["HTML", "Parallax-CSS", "JS", "Framer-Motion", "Fun"],
-    imageUrl: RoShamBoImg,
-    projectUrl: "https://lukewaehner.github.io/RoShamBo/",
-  },
-  {
-    title: "Sketchbook",
-    description:
-      "A simple sketchbook powered by the simple three frontend languages. Using eventhandlers through JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript", "Fun", "Assignment"],
-    imageUrl: SketchBookImg,
-    projectUrl: "https://lukewaehner.github.io/SketchBoard/",
+      "Multi-source business news aggregator. Uses web scraping and rotating proxies. Features REST APIs and MongoDB storage for persistent news data.",
+    tags: ["Python", "Express.js", "MongoDB", "React", "Web Scraping"],
+    imageUrl: BussingNews,
+    projectUrl: "https://github.com/lukewaehner/NewsAggregator",
   },
 ] as const;
 
@@ -131,20 +121,23 @@ type ProjectProps = (typeof projectsData)[number] & {
 };
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
+  "Rust",
   "Python",
-  "C++",
-  "Java",
-  "R",
-  "Tableau",
   "TypeScript",
+  "JavaScript",
+  "Java",
+  "C/C++",
   "React",
-  "Next.js",
   "Node.js",
+  "Express.js",
+  "Next.js",
+  "MongoDB",
+  "SQLite",
+  "HTML/CSS",
   "TailwindCSS",
-  "Sass",
-  "Github",
   "Git",
+  "REST APIs",
+  "WebSockets",
+  "Axum",
+  "Tokio",
 ] as const;

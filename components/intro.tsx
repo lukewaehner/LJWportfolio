@@ -20,7 +20,11 @@ export default function Intro() {
 
   useEffect(() => {
     const options = {
-      strings: ["Computer Engineer", "^1000Software Developer"],
+      strings: [
+        "Full Stack Engineer",
+        "^1000Systems Programmer",
+        "^1000Fintech Developer",
+      ],
       typeSpeed: 100,
       backSpeed: 60,
       loop: true,
@@ -92,7 +96,7 @@ export default function Intro() {
       >
         <a
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="www.linkedin.com/in/lukewaehner"
+          href="https://www.linkedin.com/in/lukewaehner"
           target="_blank"
         >
           <BsLinkedin />

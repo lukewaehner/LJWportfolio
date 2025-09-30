@@ -19,19 +19,20 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-4">
-        From playing with letters on the keyboard in Microsoft Word at age 3, to
-        crafting “Hello World!” in HTML at age 10, my affinity for programming
-        started early. I tranistioned that love to Fordham University, majoring
-        in Information Systems. I eagerly awaited diving into the tech realm,
-        yet it wasn't what I was looking for. After scripting in VBA during a
-        finance internship, I took a step back and realized I needed a change in
-        scenery. This epiphany steered me towards a career in software, where I
-        aim to innovate in areas like healthcare and smart vehicles.
+        I'm a software engineer specializing in full-stack development and
+        high-performance systems. At Code Works, I built custom CRM solutions
+        that reduced onboarding time by 55% for 200+ clients. Most recently,
+        I've been deep in Rust, building a high-frequency trading engine capable
+        of processing 5.7M+ orders per second with sub-13μs latency. My dual
+        degree in Computer Science and Fintech from Northeastern drives my
+        interest in where finance meets technology—whether that's building
+        trading infrastructure, payment systems, or data pipelines that power
+        financial decisions.
       </p>
       <p>
-        Outside coding, I’m an avid video gamer, fashion history buff, and ski
-        enthusiast, often found on New England slopes or scouring one of New
-        York's East Village thrift shop.
+        Currently seeking a co-op for January 2026. When I'm not coding, you'll
+        find me gaming with friends, exercising, or skiing the slopes of New
+        England.
       </p>
     </motion.section>
   );
