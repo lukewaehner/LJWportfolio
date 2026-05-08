@@ -107,7 +107,8 @@ export default function Project({
             src={imageUrl}
             alt={title}
             fill
-            quality={92}
+            quality={90}
+            sizes="(min-width: 640px) 60vw, 100vw"
             className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
           />
         </div>
@@ -144,6 +145,7 @@ export default function Project({
           alt={title}
           fill
           quality={90}
+          sizes="(min-width: 640px) 50vw, 100vw"
           className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
         />
       </div>
