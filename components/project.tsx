@@ -8,6 +8,7 @@ type ProjectData = (typeof projectsData)[number];
 type ProjectProps = ProjectData & {
   projectUrl?: string;
   downloadUrls?: { mac: string; windows: string };
+  imageBackground?: string;
   index: number;
   featured?: boolean;
 };
@@ -44,6 +45,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  imageBackground,
   projectUrl,
   downloadUrls,
   index,
@@ -100,9 +102,9 @@ export default function Project({
 
   if (featured) {
     return (
-      <article className={`${cardBase} flex flex-col sm:grid sm:grid-cols-[3fr_2fr] sm:min-h-[420px]`}>
-        {/* Image — fills left column on sm+, aspect-video on mobile */}
-        <div className="relative w-full aspect-video sm:aspect-auto overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+      <article className={`${cardBase} flex flex-col sm:grid sm:grid-cols-[3fr_2fr] sm:items-start`}>
+        {/* Image — fixed 16:9 frame; any extra row height shows card surface, not slot bg */}
+        <div className={`relative w-full aspect-video overflow-hidden ${imageBackground ?? "bg-zinc-100 dark:bg-zinc-800"}`}>
           <Image
             src={imageUrl}
             alt={title}
@@ -139,7 +141,7 @@ export default function Project({
   return (
     <article className={`${cardBase} flex flex-col`}>
       {/* Image */}
-      <div className="relative w-full aspect-video overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+      <div className={`relative w-full aspect-video overflow-hidden ${imageBackground ?? "bg-zinc-100 dark:bg-zinc-800"}`}>
         <Image
           src={imageUrl}
           alt={title}
