@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   --line-color: #e5e7eb;
@@ -11,7 +11,7 @@ html.dark {
 }
 
 .borderBlack {
-  @apply border border-black/10;
+  border: 1px solid rgb(0 0 0 / 0.1);
 }
 
 @keyframes rotateAndPulse {
@@ -45,6 +45,7 @@ html.dark {
     transform: translateY(30%) translateX(10%) scale(0.7);
   }
 }
+
 .blob-animation {
   animation: rotateAndPulse 12s linear infinite;
 }

@@ -1,13 +1,26 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-type ProjectProps = (typeof projectsData)[number] & {
-  downloadUrl?: string;
+type ProjectData = (typeof projectsData)[number];
+type ProjectProps = ProjectData & {
+  projectUrl?: string;
+  downloadUrls?: { mac: string; windows: string };
 };
+
+function detectOS(): "mac" | "windows" | "other" {
+  const platform = window.navigator.platform;
+  if (["Macintosh", "MacIntel", "MacPPC", "Mac68K"].includes(platform)) {
+    return "mac";
+  }
+  if (["Win32", "Win64", "Windows", "WinCE"].includes(platform)) {
+    return "windows";
+  }
+  return "other";
+}
 
 export default function Project({
   title,
@@ -15,8 +28,16 @@ export default function Project({
   tags,
   imageUrl,
   projectUrl,
-  downloadUrl,
+  downloadUrls,
 }: ProjectProps) {
+  const [downloadUrl, setDownloadUrl] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (!downloadUrls) return;
+    const os = detectOS();
+    setDownloadUrl(os === "windows" ? downloadUrls.windows : downloadUrls.mac);
+  }, [downloadUrls]);
+
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

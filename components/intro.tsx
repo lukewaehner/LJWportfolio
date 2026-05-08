@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
-import Typed from "typed.js";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
@@ -12,33 +11,71 @@ import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import headshot from "@/public/headshot.png";
 
+// List of role suffixes to rotate through
+const roles = [
+  "Full Stack Engineer",
+  "Systems Programmer",
+  "Fintech Developer",
+];
+
+/**
+ * RotatingRole component displays an animated rotating suffix word.
+ * Three simultaneous animations:
+ * 1. New suffix flies in from lower-right to its final position
+ * 2. Old suffix flies out to upper-right
+ * 3. Container automatically adjusts, causing prefix to move smoothly to maintain centering
+ */
+const RotatingRole = ({ roles }: { roles: string[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Rotate to the next role every 2.5 seconds
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [roles.length]);
+
+  return (
+    // Wrapper with layout prop - as content changes, it smoothly animates position
+    // This automatically handles the repositioning of the suffix to maintain centering
+    <motion.span
+      className="inline-block relative"
+      layout
+      transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
+    >
+      {/* 
+        AnimatePresence with mode="popLayout":
+        - Removes exiting word from layout (absolute positioned)
+        - New word takes its place in layout immediately
+        - Both exit and enter animations happen simultaneously
+      */}
+      <AnimatePresence initial={false} mode="popLayout">
+        <motion.span
+          key={roles[currentIndex]}
+          // Enter: start from lower-right offset, transparent
+          initial={{ opacity: 0, x: 15, y: 8 }}
+          // Animate to final position while parent container adjusts for centering
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          // Exit: fade out moving up-right
+          exit={{ opacity: 0, x: 15, y: -8 }}
+          transition={{
+            duration: 0.35,
+            ease: "easeInOut",
+          }}
+          className="inline-block whitespace-nowrap"
+        >
+          {roles[currentIndex]}
+        </motion.span>
+      </AnimatePresence>
+    </motion.span>
+  );
+};
+
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
-  const typedTarget = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      strings: [
-        "Full Stack Engineer",
-        "^1000Systems Programmer",
-        "^1000Fintech Developer",
-      ],
-      typeSpeed: 100,
-      backSpeed: 60,
-      loop: true,
-      startDelay: 1250,
-      backDelay: 2500,
-      fadeOut: true,
-    };
-
-    const typed = new Typed(typedTarget.current, options);
-
-    return () => {
-      typed.destroy();
-    };
-  }, []);
 
   return (
     <section
@@ -79,11 +116,29 @@ export default function Intro() {
           Luke.
         </span>
         <br />
-        I'm an aspiring <br className="sm:hidden" />
-        <span
-          ref={typedTarget}
-          className="font-bold hover:text-blue-500 transition duration-300"
-        ></span>{" "}
+        {/* 
+          Three-part animation system:
+          1. Prefix with layout prop - smoothly moves to maintain centering
+          2. New suffix flies in from lower-right while moving to final position
+          3. Old suffix flies out to upper-right
+          All three happen simultaneously as the content changes
+        */}
+        <span className="inline-block whitespace-nowrap">
+          <motion.span
+            className="font-bold"
+            layout
+            transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
+          >
+            I'm an aspiring{" "}
+          </motion.span>
+          <motion.span
+            className="font-bold hover:text-blue-500 transition duration-300"
+            layout
+            transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
+          >
+            <RotatingRole roles={roles} />
+          </motion.span>
+        </span>
       </motion.h1>
 
       <motion.div

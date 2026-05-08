@@ -1,29 +1,10 @@
 import React from "react";
 import { FaChartLine, FaReact } from "react-icons/fa";
-import { FaSchool } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 import StockChartImg from "@/public/StockChart.png";
 import HFTLedgerImg from "@/public/rust-hft-book.png";
 import BussingNews from "@/public/BussingNews.png";
-
-function getOperatingSystem() {
-  const platform = window.navigator.platform;
-  const macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"];
-  const windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"];
-
-  if (macosPlatforms.indexOf(platform) !== -1) {
-    return "mac";
-  } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    return "windows";
-  }
-  return "other";
-}
-
-const os = getOperatingSystem();
-
-const downloadUrlChart =
-  os === "mac" ? "/StockChartDownload-MacOS.zip" : "/StockCharts-Windows.exe";
 
 export const links = [
   {
@@ -103,7 +84,10 @@ export const projectsData = [
     tags: ["Python", "Dash", "Plotly", "yFinance", "PyInstaller"],
     imageUrl: StockChartImg,
     projectUrl: "https://github.com/lukewaehner/StockCharts_Clone",
-    downloadUrl: downloadUrlChart,
+    downloadUrls: {
+      mac: "/StockChartDownload-MacOS.zip",
+      windows: "/StockCharts-Windows.exe",
+    },
   },
   {
     title: "Full Stack News Consolidator",
@@ -114,11 +98,6 @@ export const projectsData = [
     projectUrl: "https://github.com/lukewaehner/NewsAggregator",
   },
 ] as const;
-
-type ProjectProps = (typeof projectsData)[number] & {
-  projectUrl?: string;
-  downloadUrl: "";
-};
 
 export const skillsData = [
   "Rust",
