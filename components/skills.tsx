@@ -89,7 +89,7 @@ export default function Skills() {
                 <motion.span
                   key={skill}
                   variants={chipVariants}
-                  className="font-mono text-[0.65rem] uppercase tracking-[0.15em] bg-zinc-100 dark:bg-zinc-800/80 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700/80 px-2.5 py-1 rounded hover:border-zinc-400 dark:hover:border-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-all duration-200"
+                  className="font-mono text-[0.65rem] uppercase tracking-[0.15em] bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 rounded hover:border-zinc-400 dark:hover:border-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-all duration-200"
                 >
                   {skill}
                 </motion.span>

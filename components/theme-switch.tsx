@@ -9,8 +9,9 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950"
+      className="fixed bottom-5 right-5 w-[3rem] h-[3rem] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-700 dark:text-zinc-300 shadow-sm flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-transform duration-200"
       onClick={toggleTheme}
+      aria-label="Toggle theme"
     >
       {theme === "light" ? <BsSun /> : <BsMoon />}
     </button>
