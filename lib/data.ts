@@ -57,7 +57,7 @@ export const projectsData = [
       "Exchange-simulation platform with a lock-free matching engine processing 1.3M orders/sec at sub-microsecond latency. Features async REST/WebSocket APIs for order flow and live book snapshots, validated against 200M+ orders/min benchmarking workloads.",
     tags: ["Rust", "Axum", "Tokio", "WebSockets", "HFT"],
     imageUrl: HFTLedgerImg,
-    imageBackground: "bg-black dark:bg-black",
+    imageBackground: "bg-[#0f0c09] dark:bg-[#0f0c09]",
     projectUrl: "https://github.com/lukewaehner/HFT-Ledger",
   },
   {
