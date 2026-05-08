@@ -102,9 +102,9 @@ export default function Project({
 
   if (featured) {
     return (
-      <article className={`${cardBase} flex flex-col sm:grid sm:grid-cols-[3fr_2fr] sm:items-start`}>
-        {/* Image — fixed 16:9 frame; any extra row height shows card surface, not slot bg */}
-        <div className={`relative w-full aspect-video overflow-hidden ${imageBackground ?? "bg-zinc-100 dark:bg-zinc-800"}`}>
+      <article className={`${cardBase} flex flex-col sm:grid sm:grid-cols-[3fr_2fr]`}>
+        {/* Image — slot fills its column; image fits via object-contain, letterbox blends with the slot's per-project bg */}
+        <div className={`relative w-full aspect-video sm:aspect-auto sm:h-full overflow-hidden ${imageBackground ?? "bg-zinc-100 dark:bg-zinc-800"}`}>
           <Image
             src={imageUrl}
             alt={title}
