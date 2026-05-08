@@ -23,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth overflow-x-hidden">
+    <html lang="en" className="!scroll-smooth overflow-x-hidden" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${outfit.variable} ${jetbrainsMono.variable} font-sans bg-zinc-50 text-zinc-900 relative pt-28 sm:pt-36 dark:bg-zinc-950 dark:text-zinc-50`}
       >
         <ThemeContextProvider>
