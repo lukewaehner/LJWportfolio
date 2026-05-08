@@ -77,7 +77,7 @@ export default function Contact() {
             name="message"
             required
             maxLength={5000}
-            placeholder="What&apos;s on your mind?"
+            placeholder="What's on your mind?"
             className="h-44 p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500/50 transition-all resize-none"
           />
         </div>
