@@ -13,8 +13,6 @@ import headshot from "@/public/headshot.png";
 
 const roles = ["Full Stack Engineer", "Systems Programmer", "Fintech Developer"];
 
-// mode="wait" guarantees the exit animation finishes before the next one enters —
-// prevents multiple role strings from being visible simultaneously.
 const RotatingRole = ({ roles }: { roles: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -28,11 +26,11 @@ const RotatingRole = ({ roles }: { roles: string[] }) => {
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.span
-        key={roles[currentIndex]}
+        key={currentIndex}
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -8 }}
-        transition={{ duration: 0.28, ease: "easeInOut" }}
+        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
         className="inline-block text-blue-600 dark:text-blue-400 whitespace-nowrap"
       >
         {roles[currentIndex]}
@@ -63,7 +61,7 @@ export default function Intro() {
       id="home"
       className="w-full max-w-5xl mb-28 sm:mb-40 scroll-mt-[100rem]"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-16 items-center py-10 lg:py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-center py-10 lg:py-20">
 
         {/* Left: text */}
         <div className="flex flex-col gap-6 lg:gap-7">
@@ -109,8 +107,8 @@ export default function Intro() {
             transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -5] }}
+              transition={{ duration: 2, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
               className="inline-flex"
             >
               <div className="inline-flex items-center gap-2.5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-2 shadow-sm">
@@ -119,7 +117,7 @@ export default function Intro() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
                 <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                  Available · Jan 2026 Co-op
+                  Available · July 2026
                 </span>
               </div>
             </motion.div>
@@ -135,7 +133,7 @@ export default function Intro() {
             <motion.div variants={ctaItem}>
               <Link
                 href="#contact"
-                className="group inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-700 dark:hover:bg-zinc-200 active:scale-[0.98] transition-all duration-200"
+                className="group inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-700 dark:hover:bg-zinc-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)] active:scale-[0.98] active:translate-y-0 transition-all duration-200"
                 onClick={() => {
                   setActiveSection("Contact");
                   setTimeOfLastClick(Date.now());
@@ -150,7 +148,7 @@ export default function Intro() {
               <a
                 href="/Waehner-Luke-Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm"
               >
                 Resume
                 <HiDownload className="opacity-60" />
@@ -162,7 +160,7 @@ export default function Intro() {
                 href="https://www.linkedin.com/in/lukewaehner"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 active:scale-[0.98] transition-all duration-200 shadow-sm"
+                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(37,99,235,0.15)] dark:hover:shadow-[0_6px_14px_rgba(96,165,250,0.2)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm"
                 aria-label="LinkedIn"
               >
                 <BsLinkedin />
@@ -174,7 +172,7 @@ export default function Intro() {
                 href="https://github.com/lukewaehner"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 active:scale-[0.98] transition-all duration-200 shadow-sm"
+                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm"
                 aria-label="GitHub"
               >
                 <FaGithubSquare className="text-lg" />
@@ -191,27 +189,27 @@ export default function Intro() {
           transition={{ duration: 0.7, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
-            className="relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="relative group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 220, damping: 16 }}
           >
-            {/* Inner dashed ring — rotates slowly */}
+            {/* Inner dashed ring — rotates slowly, brightens on hover */}
             <motion.div
-              className="absolute -inset-4 rounded-full border border-dashed border-blue-300/50 dark:border-blue-700/30"
+              className="absolute -inset-5 rounded-full border border-dashed border-zinc-300/70 dark:border-zinc-700/60 group-hover:border-zinc-400/90 dark:group-hover:border-zinc-500/80 transition-colors duration-500"
               animate={{ rotate: 360 }}
               transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
             />
-            {/* Outer static ring */}
-            <div className="absolute -inset-8 rounded-full border border-zinc-200/40 dark:border-zinc-700/20" />
+            {/* Outer static ring — appears more on hover */}
+            <div className="absolute -inset-10 rounded-full border border-zinc-200/50 dark:border-zinc-700/30 group-hover:border-zinc-300/70 dark:group-hover:border-zinc-600/50 transition-colors duration-500" />
 
             <Image
               src={headshot}
               alt="Luke Waehner"
-              width={320}
-              height={320}
+              width={400}
+              height={400}
               quality={95}
               priority
-              className="w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white dark:border-zinc-900 shadow-2xl shadow-zinc-400/20 dark:shadow-zinc-900/60"
+              className="w-60 h-60 sm:w-72 sm:h-72 lg:w-[22rem] lg:h-[22rem] rounded-full object-cover border-4 border-white dark:border-zinc-900 shadow-[0_25px_60px_rgba(0,0,0,0.15)] group-hover:shadow-[0_32px_72px_rgba(0,0,0,0.22)] transition-shadow duration-300"
             />
           </motion.div>
         </motion.div>

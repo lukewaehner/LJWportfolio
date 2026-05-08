@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-07T00:00:00Z",
+  "title": "Design System: Luke Waehner Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue":        { "role": "primary",   "displayName": "Signal Blue",        "canonical": "oklch(49% 0.22 261)", "tonalRamp": ["#0a1a4f","#1044b8","#1e57d8","#2563eb","#3b82f6","#60a5fa","#93c5fd","#bfdbfe"] },
+      "signal-blue-dim":    { "role": "primary",   "displayName": "Signal Blue Dim",    "canonical": "oklch(68% 0.16 261)", "tonalRamp": ["#0a1a4f","#1044b8","#1e57d8","#2563eb","#3b82f6","#60a5fa","#93c5fd","#bfdbfe"] },
+      "live-green":         { "role": "secondary", "displayName": "Live Green",         "canonical": "oklch(72% 0.17 162)", "tonalRamp": ["#064e36","#065f46","#047857","#059669","#10b981","#34d399","#6ee7b7","#a7f3d0"] },
+      "surface-light":      { "role": "neutral",   "displayName": "Surface Light",      "canonical": "oklch(99% 0.003 261)", "tonalRamp": ["#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#f4f4f5","#fafafa"] },
+      "surface-dark":       { "role": "neutral",   "displayName": "Surface Dark",       "canonical": "oklch(8% 0.005 261)",  "tonalRamp": ["#09090b","#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#fafafa"] },
+      "panel-light":        { "role": "neutral",   "displayName": "Panel Light",        "canonical": "oklch(100% 0 0)",      "tonalRamp": ["#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#f4f4f5","#ffffff"] },
+      "panel-dark":         { "role": "neutral",   "displayName": "Panel Dark",         "canonical": "oklch(12% 0.005 261)", "tonalRamp": ["#09090b","#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#fafafa"] },
+      "ink-primary-light":  { "role": "neutral",   "displayName": "Ink Primary Light",  "canonical": "oklch(12% 0.005 261)", "tonalRamp": ["#09090b","#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#fafafa"] },
+      "ink-secondary":      { "role": "neutral",   "displayName": "Ink Secondary",      "canonical": "oklch(50% 0.004 261)", "tonalRamp": ["#18181b","#27272a","#3f3f46","#52525b","#71717a","#a1a1aa","#d4d4d8","#fafafa"] },
+      "ink-body-light":     { "role": "neutral",   "displayName": "Ink Body Light",     "canonical": "oklch(38% 0.005 261)", "tonalRamp": ["#18181b","#27272a","#3f3f46","#52525b","#71717a","#a1a1aa","#d4d4d8","#fafafa"] },
+      "border-light":       { "role": "neutral",   "displayName": "Border Light",       "canonical": "oklch(91% 0.004 261)", "tonalRamp": ["#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#e4e4e7","#fafafa"] },
+      "surface-raised-light":{ "role": "neutral",  "displayName": "Surface Raised Light","canonical": "oklch(96% 0.003 261)","tonalRamp": ["#18181b","#27272a","#3f3f46","#71717a","#a1a1aa","#d4d4d8","#f4f4f5","#ffffff"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "Hero name only. Aggressive tracking and sub-1 line-height to command the hero." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings. Same family as display but relaxed for scroll-distance legibility." },
+      "title":    { "displayName": "Title",    "purpose": "Project card headings and component titles." },
+      "body":     { "displayName": "Body",     "purpose": "All prose. Capped at 65ch. Never span full width." },
+      "label":    { "displayName": "Label",    "purpose": "Metadata only: tags, eyebrows, form labels, stat descriptors. Always uppercase + wide-tracked." }
+    },
+    "shadows": [
+      { "name": "card-hover",     "value": "0 4px 6px rgba(0,0,0,0.04), 0 16px 40px rgba(0,0,0,0.10), 0 1px 0 rgba(0,0,0,0.02)", "purpose": "Project card hover lift. Pairs with translateY(-2px)." },
+      { "name": "card-hover-dark","value": "0 4px 6px rgba(0,0,0,0.12), 0 16px 40px rgba(0,0,0,0.40), 0 1px 0 rgba(0,0,0,0.06)", "purpose": "Card hover lift, dark mode." },
+      { "name": "headshot",       "value": "0 25px 50px rgba(0,0,0,0.12)",                                                         "purpose": "Hero portrait only. Static ambient." },
+      { "name": "nav",            "value": "0 1px 3px rgba(0,0,0,0.04)",                                                           "purpose": "Fixed nav pill separation." }
+    ],
+    "motion": [
+      { "name": "expo-out",    "value": "cubic-bezier(0.16,1,0.3,1)", "purpose": "Standard entrance easing. Used on all whileInView and initial animations." },
+      { "name": "spring-nav",  "value": "type:spring stiffness:380 damping:30", "purpose": "Nav active pill slide via layoutId." },
+      { "name": "stagger-cta", "value": "0.08s between children, 0.42s delay", "purpose": "CTA row stagger on hero entrance." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Black pill CTA. Used for Contact and other primary actions.",
+      "html": "<button class=\"ds-btn-primary\">Contact me <svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 7h10M8 3l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #18181b; color: #fafafa; padding: 12px 24px; border-radius: 9999px; border: none; font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; cursor: pointer; transition: background 200ms ease, transform 100ms ease; } .ds-btn-primary:hover { background: #3f3f46; } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #fafafa, 0 0 0 4px rgba(37,99,235,0.5); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "White-bordered pill. Used for Resume download and secondary actions.",
+      "html": "<button class=\"ds-btn-ghost\">Resume <svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7 2v8M4 7l3 3 3-3M2 12h10\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: #52525b; padding: 12px 24px; border-radius: 9999px; border: 1px solid #e4e4e7; font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: background 200ms ease, color 200ms ease, transform 100ms ease; } .ds-btn-ghost:hover { background: #f4f4f5; color: #18181b; } .ds-btn-ghost:active { transform: scale(0.98); } .ds-btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(37,99,235,0.5); }"
+    },
+    {
+      "name": "Tech Stack Tag",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Non-interactive taxonomy chip for project cards. Mono, uppercase, 4px radius.",
+      "html": "<span class=\"ds-chip-tag\">Rust</span>",
+      "css": ".ds-chip-tag { display: inline-flex; align-items: center; background: #f4f4f5; color: #71717a; border: 1px solid #e4e4e7; border-radius: 4px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace; font-size: 0.58rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; line-height: 1; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "button-ghost",
+      "description": "Flagship interactive surface. Flat at rest, lifts 2px with 3-layer shadow on hover.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-card__image\"></div><div class=\"ds-project-card__content\"><h3 class=\"ds-project-card__title\">Rust Order Book Exchange</h3><p class=\"ds-project-card__desc\">High-frequency trading engine processing 200k+ trades/sec with 13μs latency.</p><ul class=\"ds-project-card__tags\"><li class=\"ds-chip-tag\">Rust</li><li class=\"ds-chip-tag\">Axum</li><li class=\"ds-chip-tag\">Tokio</li></ul><a class=\"ds-project-card__link\" href=\"#\">View on GitHub <svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 10L10 2M10 2H4M10 2V8\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div></article>",
+      "css": ".ds-project-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid rgba(228,228,231,0.7); border-radius: 16px; overflow: hidden; transition: box-shadow 300ms cubic-bezier(0.16,1,0.3,1), transform 300ms cubic-bezier(0.16,1,0.3,1); } .ds-project-card:hover { box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 16px 40px rgba(0,0,0,0.10), 0 1px 0 rgba(0,0,0,0.02); transform: translateY(-2px); } .ds-project-card__image { width: 100%; aspect-ratio: 16/9; background: #f4f4f5; overflow: hidden; } .ds-project-card__content { display: flex; flex-direction: column; gap: 8px; padding: 28px; flex: 1; } .ds-project-card__title { font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; color: #18181b; margin: 0; } .ds-project-card__desc { font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.6; color: #71717a; margin: 0; } .ds-project-card__tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 8px 0 0; } .ds-chip-tag { display: inline-flex; align-items: center; background: #f4f4f5; color: #71717a; border: 1px solid #e4e4e7; border-radius: 4px; padding: 4px 10px; font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace; font-size: 0.58rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; line-height: 1; } .ds-project-card__link { display: inline-flex; align-items: center; gap: 6px; font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #2563eb; text-decoration: none; margin-top: 8px; transition: color 200ms ease; } .ds-project-card__link:hover { color: #1d4ed8; }"
+    },
+    {
+      "name": "Stat Block",
+      "kind": "custom",
+      "refersTo": "chip-skill",
+      "description": "Key metric display in About section. Tinted container, no side stripe.",
+      "html": "<div class=\"ds-stat-block\"><span class=\"ds-stat-block__value\">13μs</span><span class=\"ds-stat-block__label\">HFT Latency</span></div>",
+      "css": ".ds-stat-block { display: flex; flex-direction: column; gap: 2px; background: #f4f4f5; border-radius: 8px; padding: 12px 16px; } .ds-stat-block__value { font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; color: #18181b; } .ds-stat-block__label { font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace; font-size: 0.65rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #71717a; }"
+    },
+    {
+      "name": "Form Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Clean stroked field. Signal Blue focus ring — the one structural use of the accent.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"ds-email\">Your email</label><input class=\"ds-field__input\" id=\"ds-email\" type=\"email\" placeholder=\"you@example.com\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; } .ds-field__label { font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace; font-size: 0.75rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #71717a; } .ds-field__input { height: 48px; padding: 0 16px; background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px; font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; color: #18181b; outline: none; transition: border-color 200ms ease, box-shadow 200ms ease; box-sizing: border-box; width: 100%; } .ds-field__input::placeholder { color: rgba(113,113,122,0.6); } .ds-field__input:focus { border-color: rgba(37,99,235,0.5); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }"
+    },
+    {
+      "name": "Navigation Pill",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Fixed floating pill nav. Backdrop-blur separates it from scrolling content.",
+      "html": "<nav class=\"ds-nav\"><ul class=\"ds-nav__list\"><li class=\"ds-nav__item ds-nav__item--active\">Home</li><li class=\"ds-nav__item\">About</li><li class=\"ds-nav__item\">Projects</li><li class=\"ds-nav__item\">Skills</li></ul></nav>",
+      "css": ".ds-nav { display: inline-block; background: rgba(250,250,250,0.85); border: 1px solid rgba(228,228,231,0.5); border-radius: 9999px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.04); } .ds-nav__list { display: flex; align-items: center; height: 52px; padding: 0 12px; gap: 2px; list-style: none; margin: 0; } .ds-nav__item { position: relative; display: flex; align-items: center; justify-content: center; padding: 8px 12px; border-radius: 9999px; font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.82rem; font-weight: 500; color: #71717a; cursor: pointer; white-space: nowrap; transition: color 200ms ease; } .ds-nav__item:hover { color: #18181b; } .ds-nav__item--active { color: #18181b; background: #f4f4f5; }"
+    },
+    {
+      "name": "Availability Badge",
+      "kind": "custom",
+      "refersTo": "button-ghost",
+      "description": "Hero signature component. Live Green ping dot + sine-wave float animation.",
+      "html": "<div class=\"ds-availability\"><span class=\"ds-availability__dot\"></span><span class=\"ds-availability__text\">Available &middot; Jan 2026 Co-op</span></div>",
+      "css": ".ds-availability { display: inline-flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #e4e4e7; border-radius: 9999px; padding: 8px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); } .ds-availability__dot { position: relative; width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%; background: #10b981; } .ds-availability__dot::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: #10b981; opacity: 0.75; animation: ds-ping 1.5s cubic-bezier(0,0,0.2,1) infinite; } @keyframes ds-ping { 75%, 100% { transform: scale(2.2); opacity: 0; } } .ds-availability__text { font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #52525b; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Operator",
+    "overview": "A senior engineer does not walk into a room and announce their credentials. Their presence is enough. This design system operates the same way: tightly controlled typography, a deliberate neutral field, and one reserved accent color that appears only when it has something to say.\n\nThe experience is calm and confident. Whitespace is not emptiness; it is the breathing room that makes each data point land with weight. Entrance animations are short, expo-eased, and purposeful — they choreograph attention toward content hierarchy rather than celebrating themselves.\n\nThis system explicitly rejects animation noise, generic portfolio templates, glassmorphism, and any layout where a recruiter cannot identify Luke's value in 10 seconds.",
+    "keyCharacteristics": [
+      "Neutral-dominant palette: zinc foundation with one reserved signal blue",
+      "Tightly-cropped bold typography with high contrast between display and metadata scales",
+      "Flat surfaces at rest; depth earned through interaction, never applied decoratively",
+      "JetBrains Mono used exclusively as a metadata register",
+      "Tonal layering as the primary spatial signal",
+      "Dark mode via semantically paired tokens"
+    ],
+    "rules": [
+      { "name": "The Signal Rule",             "body": "Signal Blue (#2563eb) is used for interactive destinations only. Prohibited as a decorative accent, section tint, or border color.",             "section": "colors" },
+      { "name": "The Neutral Staircase Rule",  "body": "Surface → Panel → Surface Raised is the three-step elevation staircase. Never skip steps. Depth is expressed through tonal adjacency first.",  "section": "colors" },
+      { "name": "The Mono Index Rule",         "body": "JetBrains Mono is the metadata voice only: tags, eyebrows, labels, stat descriptors. Prohibited in headings, prose, CTAs, and nav links.",     "section": "typography" },
+      { "name": "The Scale Contrast Rule",     "body": "The ratio between Display and Label is roughly 10:1. Never compress it. A flat type scale reads as amateur.",                                     "section": "typography" },
+      { "name": "The Flat-Until-Earned Rule",  "body": "Shadow is a response to user interaction, not a default surface treatment. Cards carry zero shadow at rest. The hover lift is the exception.",  "section": "elevation" }
+    ],
+    "dos": [
+      "Use Signal Blue (#2563eb) exclusively on interactive destinations.",
+      "Let whitespace carry weight. Section gap is 7rem.",
+      "Use JetBrains Mono for all metadata. Always uppercase. Always wide-tracked.",
+      "Keep the shadow vocabulary minimal: card hover lift and headshot ambient only.",
+      "Put stat block numbers in a tinted container — never a side-stripe border.",
+      "Scale the display headline aggressively: clamp(2.8rem, 7vw, 5.5rem), tracking-tighter, line-height under 1.",
+      "Exit every entrance animation within 700ms total.",
+      "Give cards a physical lift on hover: translateY(-2px) plus the 3-layer shadow."
+    ],
+    "donts": [
+      "Don't use border-left or border-right greater than 1px as a colored accent on any element.",
+      "Don't use gradient text (background-clip: text with a gradient).",
+      "Don't use glassmorphism decoratively.",
+      "Don't animate layout properties. Animate transform and opacity only.",
+      "Don't reach for neon or high-chroma palettes.",
+      "Don't use identical card grids (icon + heading + text repeated).",
+      "Don't let any section do two jobs.",
+      "Don't use Signal Blue on stat block accents, section dividers, or decorative borders."
+    ]
+  }
+}

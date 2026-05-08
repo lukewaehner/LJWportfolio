@@ -27,17 +27,6 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${jetbrainsMono.variable} font-sans bg-zinc-50 text-zinc-900 relative pt-28 sm:pt-36 dark:bg-zinc-950 dark:text-zinc-50`}
       >
-        {/* Static mesh gradient — no GPU animation cost */}
-        <div
-          aria-hidden="true"
-          className="fixed inset-0 -z-10 pointer-events-none overflow-hidden"
-          style={{
-            background: `
-              radial-gradient(ellipse 80% 50% at 72% 8%, rgba(37,99,235,0.07) 0%, transparent 55%),
-              radial-gradient(ellipse 55% 45% at 8% 88%, rgba(37,99,235,0.05) 0%, transparent 60%)
-            `,
-          }}
-        />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
