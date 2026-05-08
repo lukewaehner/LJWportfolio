@@ -4,21 +4,8 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { motion } from "framer-motion";
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+const allSkills = [...skillsData];
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
@@ -27,26 +14,44 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-28 sm:mb-40 scroll-mt-28 w-full max-w-4xl"
     >
       <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80 hover:bg-white/20 dark:hover:bg-white/20"
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
+
+      {/* Marquee wrapper — negative margin breaks out of parent px-4 */}
+      <div
+        className="overflow-hidden -mx-4 px-0"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+        }}
+      >
+        {/* Row 1 — left to right */}
+        <div className="flex animate-marquee mb-3" aria-hidden="false">
+          {[...allSkills, ...allSkills].map((skill, index) => (
+            <span
+              key={index}
+              className="shrink-0 mx-2 font-mono text-[0.65rem] uppercase tracking-[0.15em] bg-white dark:bg-zinc-900 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-800 px-4 py-2.5 rounded-lg"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+
+        {/* Row 2 — right to left */}
+        <div className="flex animate-marquee-reverse" aria-hidden="true">
+          {[...allSkills, ...allSkills].map((skill, index) => (
+            <span
+              key={index}
+              className="shrink-0 mx-2 font-mono text-[0.65rem] uppercase tracking-[0.15em] bg-white dark:bg-zinc-900 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-800 px-4 py-2.5 rounded-lg"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

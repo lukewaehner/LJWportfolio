@@ -1,13 +1,1 @@
-{
-  "node": {
-    "d6ca062ebfb11e1124ac4d6d24aeccf043d1bf84": {
-      "workers": {
-        "app/page": "(sc_action)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Flukewaehner%2FRepos%2FLJWportfolio%2Factions%2FsendEmail.ts%22%2C%5B%22sendEmail%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/page": "sc_action"
-      }
-    }
-  },
-  "edge": {}
-}
+{"node":{"c3136557e761c5fabb0272af522a45a9f552897a":{"workers":{"app/page":5973},"layer":{"app/page":"sc_action"}}},"edge":{}}
