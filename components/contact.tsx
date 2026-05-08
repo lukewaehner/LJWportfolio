@@ -17,7 +17,7 @@ export default function Contact() {
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_1.1fr] gap-12 sm:gap-16 border-t border-zinc-200 dark:border-zinc-800 pt-10">
 
@@ -29,7 +29,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             >
               Get in Touch
             </motion.span>
@@ -38,7 +38,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             >
               Contact me
             </motion.h2>
@@ -49,7 +49,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <p className="text-zinc-500 dark:text-zinc-400 text-[1rem] leading-relaxed max-w-[38ch]">
               Available for co-op roles starting July 2026. Open to full-stack,
@@ -77,7 +77,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           action={async (formData) => {
             const { error } = await sendEmail(formData);
             if (error) {

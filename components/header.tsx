@@ -18,7 +18,7 @@ export default function Header() {
         className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-zinc-200/50 bg-zinc-50/85 shadow-sm shadow-black/[0.02] backdrop-blur-md sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-zinc-950/85 dark:border-zinc-800/50"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       />
 
       <nav className="flex fixed top-0 left-1/2 h-[4.5rem] -translate-x-1/2 sm:top-6 sm:h-[3.25rem]">
@@ -29,7 +29,7 @@ export default function Header() {
               className="relative flex items-center"
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             >
               {/* Active background — sibling of Link so it doesn't create a nested stacking context */}
               {link.name === activeSection && (

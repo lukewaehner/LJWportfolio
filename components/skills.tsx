@@ -29,7 +29,7 @@ const rowVariants = {
 
 const chipVariants = {
   hidden: { opacity: 0, y: 7 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.28, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.28, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 export default function Skills() {
@@ -44,7 +44,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
           Technical Stack
         </motion.span>
@@ -53,7 +53,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
           My skills
         </motion.h2>
@@ -72,7 +72,7 @@ export default function Skills() {
               initial={{ opacity: 0, x: -6 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.38, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.38, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             >
               {cat.label}
             </motion.span>

@@ -20,7 +20,7 @@ export default function About() {
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       id="about"
     >
       {/* Heading with mono eyebrow */}
@@ -30,7 +30,7 @@ export default function About() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
           Profile
         </motion.span>
@@ -39,7 +39,7 @@ export default function About() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
           About me
         </motion.h2>
@@ -54,7 +54,7 @@ export default function About() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <span className="text-4xl sm:text-5xl font-bold tracking-tight leading-none text-zinc-900 dark:text-zinc-50">
               {value}
@@ -72,7 +72,7 @@ export default function About() {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       >
         <p className="text-zinc-800 dark:text-zinc-200 text-[1.05rem] leading-relaxed font-medium">
           I&apos;m a software engineer working across full-stack development

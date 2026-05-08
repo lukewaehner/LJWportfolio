@@ -30,7 +30,7 @@ const RotatingRole = ({ roles }: { roles: string[] }) => {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -8 }}
-        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         className="inline-block text-blue-600 dark:text-blue-400 whitespace-nowrap"
       >
         {roles[currentIndex]}
@@ -48,7 +48,7 @@ const ctaContainer = {
 };
 const ctaItem = {
   hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 export default function Intro() {
@@ -70,7 +70,7 @@ export default function Intro() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <span className="inline-flex items-center gap-3 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">
               <span className="h-px w-8 bg-zinc-400 dark:bg-zinc-600" />
@@ -83,7 +83,7 @@ export default function Intro() {
             className="text-[clamp(2.8rem,7vw,5.5rem)] font-bold tracking-tighter leading-[0.88] text-zinc-900 dark:text-zinc-50"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.55, delay: 0.08, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             Luke
             <br />
@@ -95,7 +95,7 @@ export default function Intro() {
             className="text-xl sm:text-2xl text-zinc-500 dark:text-zinc-400 font-light min-h-[1.75rem]"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <RotatingRole roles={roles} />
           </motion.p>
@@ -104,7 +104,7 @@ export default function Intro() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <motion.div
               animate={{ y: [0, -5] }}
@@ -186,7 +186,7 @@ export default function Intro() {
           className="flex justify-center lg:justify-end"
           initial={{ opacity: 0, scale: 0.88, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.14, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
           <motion.div
             className="relative group"

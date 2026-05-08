@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   --line-color: #e4e4e7;
@@ -11,7 +13,7 @@ html.dark {
 }
 
 .borderBlack {
-  @apply border border-black/[0.07];
+  border: 1px solid rgb(0 0 0 / 0.07);
 }
 
 @keyframes marquee {
