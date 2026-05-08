@@ -1,26 +1,43 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { projectsData } from "@/lib/data";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import { projectsData } from "@/lib/data";
 
 type ProjectData = (typeof projectsData)[number];
 type ProjectProps = ProjectData & {
   projectUrl?: string;
   downloadUrls?: { mac: string; windows: string };
+  index: number;
+  featured?: boolean;
 };
 
 function detectOS(): "mac" | "windows" | "other" {
-  const platform = window.navigator.platform;
-  if (["Macintosh", "MacIntel", "MacPPC", "Mac68K"].includes(platform)) {
-    return "mac";
-  }
-  if (["Win32", "Win64", "Windows", "WinCE"].includes(platform)) {
-    return "windows";
-  }
+  if (typeof window === "undefined") return "other";
+  const p = window.navigator.platform;
+  if (["Macintosh", "MacIntel", "MacPPC", "Mac68K"].includes(p)) return "mac";
+  if (["Win32", "Win64", "Windows", "WinCE"].includes(p)) return "windows";
   return "other";
 }
+
+const ArrowUpRight = () => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ArrowDown = () => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+    <path d="M6 1v7M3 5l3 3 3-3M2 10h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const cardBase =
+  "group bg-white dark:bg-zinc-900 border border-zinc-200/70 dark:border-zinc-800 rounded-2xl overflow-hidden " +
+  "transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] " +
+  "hover:-translate-y-0.5 " +
+  "hover:shadow-[0_4px_6px_rgba(0,0,0,0.04),0_16px_40px_rgba(0,0,0,0.10),0_1px_0_rgba(0,0,0,0.02)] " +
+  "dark:hover:shadow-[0_4px_6px_rgba(0,0,0,0.12),0_16px_40px_rgba(0,0,0,0.40),0_1px_0_rgba(0,0,0,0.06)]";
 
 export default function Project({
   title,
@@ -29,6 +46,8 @@ export default function Project({
   imageUrl,
   projectUrl,
   downloadUrls,
+  index,
+  featured = false,
 }: ProjectProps) {
   const [downloadUrl, setDownloadUrl] = useState<string | undefined>(undefined);
 
@@ -38,78 +57,115 @@ export default function Project({
     setDownloadUrl(os === "windows" ? downloadUrls.windows : downloadUrls.mac);
   }, [downloadUrls]);
 
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const ordinal = String(index + 1).padStart(2, "0");
 
-  return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
-    >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-xl font-semibold">{title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          {projectUrl && (
-            <a
-              href={projectUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
-            >
-              View Project
-            </a>
-          )}
-          {downloadUrl && (
-            <a
-              href={downloadUrl}
-              download
-              className="mt-2 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
-            >
-              Download
-            </a>
-          )}
-          <ul className="flex flex-wrap mt-4 pt-2 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+  const TagList = () => (
+    <ul className="flex flex-wrap gap-1.5">
+      {tags.map((tag) => (
+        <li
+          key={tag}
+          className="font-mono text-[0.58rem] uppercase tracking-widest bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 rounded"
+        >
+          {tag}
+        </li>
+      ))}
+    </ul>
+  );
+
+  const Links = () => (
+    <div className="flex items-center gap-5">
+      {projectUrl && (
+        <a
+          href={projectUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors inline-flex items-center gap-1.5"
+        >
+          View on GitHub
+          <ArrowUpRight />
+        </a>
+      )}
+      {downloadUrl && (
+        <a
+          href={downloadUrl}
+          download
+          className="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-1.5"
+        >
+          Download
+          <ArrowDown />
+        </a>
+      )}
+    </div>
+  );
+
+  if (featured) {
+    return (
+      <article className={`${cardBase} flex flex-col sm:grid sm:grid-cols-[3fr_2fr] sm:min-h-[420px]`}>
+        {/* Image — fills left column on sm+, aspect-video on mobile */}
+        <div className="relative w-full aspect-video sm:aspect-auto overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            quality={92}
+            className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
+          />
         </div>
 
+        {/* Content */}
+        <div className="flex flex-col justify-between gap-6 p-7 sm:p-8">
+          <div className="flex flex-col gap-3">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
+              {ordinal}
+            </span>
+            <h3 className="text-2xl font-bold tracking-tight leading-[1.15] text-zinc-900 dark:text-zinc-50">
+              {title}
+            </h3>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              {description}
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <TagList />
+            <Links />
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  /* Standard card: image top, content below — used in the 2-col grid */
+  return (
+    <article className={`${cardBase} flex flex-col`}>
+      {/* Image */}
+      <div className="relative w-full aspect-video overflow-hidden bg-zinc-100 dark:bg-zinc-800">
         <Image
           src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3q
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
+          alt={title}
+          fill
+          quality={90}
+          className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
         />
-      </section>
-    </motion.div>
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col justify-between gap-5 p-6 flex-1">
+        <div className="flex flex-col gap-2">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
+            {ordinal}
+          </span>
+          <h3 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+            {title}
+          </h3>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            {description}
+          </p>
+        </div>
+        <div className="flex flex-col gap-3">
+          <TagList />
+          <Links />
+        </div>
+      </div>
+    </article>
   );
 }
