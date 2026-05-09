@@ -8,7 +8,7 @@ export default function SubmitBtn() {
   return (
     <button
       type="submit"
-      className="mt-1 self-start inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-700 dark:hover:bg-zinc-200 active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+      className="mt-1 self-start inline-flex items-center gap-2 2xl:gap-2.5 min-[1920px]:gap-3 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-3 2xl:px-7 2xl:py-3.5 min-[1920px]:px-9 min-[1920px]:py-4 rounded-full text-sm 2xl:text-base min-[1920px]:text-lg font-medium hover:bg-zinc-700 dark:hover:bg-zinc-200 active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
       disabled={pending}
     >
       {pending ? (

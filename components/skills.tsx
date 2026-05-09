@@ -12,43 +12,49 @@ const categories: { label: string; skills: Skill[] }[] = [
       { name: "Rust", core: true },
       { name: "Python", core: true },
       { name: "TypeScript", core: true },
-      { name: "JavaScript" },
+      { name: "JavaScript", core: true },
+      { name: "Ruby", core: true },
       { name: "Java" },
       { name: "C/C++" },
       { name: "Swift" },
       { name: "R" },
+      { name: "HTML" },
+      { name: "CSS" },
     ],
   },
   {
-    label: "Frontend",
+    label: "Frameworks",
     skills: [
+      { name: "Rails", core: true },
       { name: "React", core: true },
       { name: "Next.js", core: true },
-      { name: "TailwindCSS" },
-      { name: "HTML/CSS" },
+      { name: "Tailwind", core: true },
+      { name: "Node.js", core: true },
+      { name: "Stimulus.js" },
+      { name: "Axum" },
+      { name: "Tokio" },
       { name: "Electron" },
     ],
   },
   {
-    label: "Backend",
+    label: "Data",
     skills: [
-      { name: "Node.js", core: true },
-      { name: "Axum", core: true },
-      { name: "Tokio", core: true },
-      { name: "Express.js" },
-      { name: "WebSockets" },
-      { name: "REST APIs" },
+      { name: "PostgreSQL", core: true },
+      { name: "MongoDB" },
+      { name: "SQLite" },
+      { name: "Superset" },
     ],
   },
   {
-    label: "Tooling",
+    label: "Infrastructure & Tools",
     skills: [
-      { name: "PostgreSQL", core: true },
       { name: "AWS", core: true },
-      { name: "MongoDB" },
-      { name: "SQLite" },
-      { name: "Git" },
+      { name: "Jenkins", core: true },
+      { name: "REST APIs" },
+      { name: "Google Workspace APIs" },
       { name: "CI/CD Pipelines" },
+      { name: "Git" },
+      { name: "IntelliJ" },
     ],
   },
 ];
@@ -67,11 +73,11 @@ export default function Skills() {
   const { ref } = useSectionInView("Skills");
 
   return (
-    <section id="skills" ref={ref} className="mb-28 sm:mb-40 scroll-mt-28 w-full max-w-4xl">
+    <section id="skills" ref={ref} className="mb-28 sm:mb-40 scroll-mt-28 w-full max-w-4xl 2xl:max-w-6xl min-[1920px]:max-w-[1400px]">
       {/* Heading with eyebrow */}
       <div className="mb-10">
         <motion.span
-          className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
+          className="inline-block font-mono text-[0.65rem] 2xl:text-[0.78rem] min-[1920px]:text-[0.9rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -80,7 +86,7 @@ export default function Skills() {
           Stack
         </motion.span>
         <motion.h2
-          className="text-[clamp(2.25rem,5vw,3rem)] font-bold leading-[1.1] tracking-[-0.04em]"
+          className="text-[clamp(2.25rem,5vw,3rem)] 2xl:text-[clamp(3rem,5vw,4.5rem)] min-[1920px]:text-[clamp(4rem,5vw,5.5rem)] font-bold leading-[1.1] tracking-[-0.04em]"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -95,11 +101,11 @@ export default function Skills() {
         {categories.map((cat, i) => (
           <div
             key={cat.label}
-            className="flex flex-col sm:grid sm:grid-cols-[140px_1fr] sm:items-baseline gap-3 sm:gap-8 py-5 sm:py-6"
+            className="flex flex-col sm:grid sm:grid-cols-[140px_1fr] 2xl:grid-cols-[180px_1fr] min-[1920px]:grid-cols-[220px_1fr] sm:items-baseline gap-3 sm:gap-8 2xl:gap-10 py-5 sm:py-6 2xl:py-8 min-[1920px]:py-10"
           >
             {/* Category label */}
             <motion.span
-              className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-500"
+              className="font-mono text-[0.65rem] 2xl:text-[0.78rem] min-[1920px]:text-[0.9rem] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-500"
               initial={{ opacity: 0, x: -6 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -120,7 +126,7 @@ export default function Skills() {
                 <motion.span
                   key={skill.name}
                   variants={chipVariants}
-                  className={`font-mono text-[0.62rem] uppercase tracking-[0.15em] border px-2.5 py-1 rounded ${
+                  className={`font-mono text-[0.62rem] 2xl:text-[0.75rem] min-[1920px]:text-[0.88rem] uppercase tracking-[0.15em] border px-2.5 py-1 2xl:px-3 2xl:py-1.5 min-[1920px]:px-3.5 min-[1920px]:py-2 rounded ${
                     skill.core
                       ? "bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-700 dark:text-zinc-50 dark:border-zinc-700"
                       : "bg-zinc-100 text-zinc-500 border-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-700"

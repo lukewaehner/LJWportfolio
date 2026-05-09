@@ -62,11 +62,11 @@ export default function Project({
   const ordinal = String(index + 1).padStart(2, "0");
 
   const TagList = () => (
-    <ul className="flex flex-wrap gap-1.5">
+    <ul className="flex flex-wrap gap-1.5 2xl:gap-2">
       {tags.map((tag) => (
         <li
           key={tag}
-          className="font-mono text-[0.58rem] uppercase tracking-widest bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 rounded"
+          className="font-mono text-[0.58rem] 2xl:text-[0.7rem] min-[1920px]:text-[0.82rem] uppercase tracking-widest bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 2xl:px-3 2xl:py-1.5 min-[1920px]:px-3.5 min-[1920px]:py-2 rounded"
         >
           {tag}
         </li>
@@ -75,13 +75,13 @@ export default function Project({
   );
 
   const Links = () => (
-    <div className="flex items-center gap-5">
+    <div className="flex items-center gap-5 2xl:gap-6 min-[1920px]:gap-7">
       {projectUrl && (
         <a
           href={projectUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors inline-flex items-center gap-1.5"
+          className="text-sm 2xl:text-base min-[1920px]:text-lg font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors inline-flex items-center gap-1.5 2xl:gap-2"
         >
           View on GitHub
           <ArrowUpRight />
@@ -91,7 +91,7 @@ export default function Project({
         <a
           href={downloadUrl}
           download
-          className="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-1.5"
+          className="text-sm 2xl:text-base min-[1920px]:text-lg font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-1.5 2xl:gap-2"
         >
           Download
           <ArrowDown />
@@ -116,19 +116,19 @@ export default function Project({
         </div>
 
         {/* Content */}
-        <div className="flex flex-col justify-between gap-6 p-7 sm:p-8">
-          <div className="flex flex-col gap-3">
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+        <div className="flex flex-col justify-between gap-6 2xl:gap-8 min-[1920px]:gap-10 p-7 sm:p-8 2xl:p-10 min-[1920px]:p-12">
+          <div className="flex flex-col gap-3 2xl:gap-4 min-[1920px]:gap-5">
+            <span className="font-mono text-[0.65rem] 2xl:text-[0.78rem] min-[1920px]:text-[0.9rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
               {ordinal}
             </span>
-            <h3 className="text-2xl font-bold tracking-tight leading-[1.15] text-zinc-900 dark:text-zinc-50">
+            <h3 className="text-2xl 2xl:text-3xl min-[1920px]:text-4xl font-bold tracking-tight leading-[1.15] text-zinc-900 dark:text-zinc-50">
               {title}
             </h3>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            <p className="text-sm 2xl:text-base min-[1920px]:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
               {description}
             </p>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 2xl:gap-5 min-[1920px]:gap-6">
             <TagList />
             <Links />
           </div>
@@ -153,19 +153,19 @@ export default function Project({
       </div>
 
       {/* Content */}
-      <div className="flex flex-col justify-between gap-5 p-6 flex-1">
-        <div className="flex flex-col gap-2">
-          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+      <div className="flex flex-col justify-between gap-5 2xl:gap-6 min-[1920px]:gap-7 p-6 2xl:p-8 min-[1920px]:p-10 flex-1">
+        <div className="flex flex-col gap-2 2xl:gap-3 min-[1920px]:gap-3.5">
+          <span className="font-mono text-[0.65rem] 2xl:text-[0.78rem] min-[1920px]:text-[0.9rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
             {ordinal}
           </span>
-          <h3 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h3 className="text-lg 2xl:text-2xl min-[1920px]:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
             {title}
           </h3>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+          <p className="text-sm 2xl:text-base min-[1920px]:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
             {description}
           </p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 2xl:gap-4 min-[1920px]:gap-5">
           <TagList />
           <Links />
         </div>

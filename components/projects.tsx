@@ -9,11 +9,11 @@ export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.1);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28 sm:mb-40 w-full max-w-4xl">
+    <section ref={ref} id="projects" className="scroll-mt-28 mb-28 sm:mb-40 w-full max-w-4xl 2xl:max-w-6xl min-[1920px]:max-w-[1500px]">
       {/* Heading with eyebrow */}
       <div className="mb-10">
         <motion.span
-          className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
+          className="inline-block font-mono text-[0.65rem] 2xl:text-[0.78rem] min-[1920px]:text-[0.9rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -22,7 +22,7 @@ export default function Projects() {
           Selected Work
         </motion.span>
         <motion.h2
-          className="text-[clamp(2.25rem,5vw,3rem)] font-bold leading-[1.1] tracking-[-0.04em]"
+          className="text-[clamp(2.75rem,6vw,4rem)] 2xl:text-[clamp(4rem,6vw,5.5rem)] min-[1920px]:text-[clamp(5rem,6vw,7rem)] font-bold leading-[1.1] tracking-[-0.04em]"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,7 +44,7 @@ export default function Projects() {
       </motion.div>
 
       {/* Two-column grid for remaining projects */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 2xl:gap-6 min-[1920px]:gap-8">
         {projectsData.slice(1).map((project, i) => (
           <motion.div
             key={project.title}

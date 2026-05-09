@@ -2,6 +2,9 @@ import StockChartImg from "@/public/StockChart.png";
 import HFTLedgerImg from "@/public/rust-hft-book.png";
 import BussingNews from "@/public/BussingNews.png";
 
+// Edit to update the hero availability pill — e.g. "Currently at Smartleaf", "Open to internships · Summer 2027", etc.
+export const status = "Backend Engineer @ Smartleaf";
+
 export const links = [
   { name: "Home", hash: "#home" },
   { name: "About", hash: "#about" },
