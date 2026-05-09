@@ -118,7 +118,7 @@ export default function Project({
         {/* Content */}
         <div className="flex flex-col justify-between gap-6 p-7 sm:p-8">
           <div className="flex flex-col gap-3">
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
               {ordinal}
             </span>
             <h3 className="text-2xl font-bold tracking-tight leading-[1.15] text-zinc-900 dark:text-zinc-50">
@@ -155,7 +155,7 @@ export default function Project({
       {/* Content */}
       <div className="flex flex-col justify-between gap-5 p-6 flex-1">
         <div className="flex flex-col gap-2">
-          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
             {ordinal}
           </span>
           <h3 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">

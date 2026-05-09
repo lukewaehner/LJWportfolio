@@ -3,22 +3,53 @@
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
-const categories = [
+type Skill = { name: string; core?: boolean };
+
+const categories: { label: string; skills: Skill[] }[] = [
   {
     label: "Languages",
-    skills: ["Rust", "Python", "TypeScript", "JavaScript", "Java", "C/C++", "Swift", "R"],
+    skills: [
+      { name: "Rust", core: true },
+      { name: "Python", core: true },
+      { name: "TypeScript", core: true },
+      { name: "JavaScript" },
+      { name: "Java" },
+      { name: "C/C++" },
+      { name: "Swift" },
+      { name: "R" },
+    ],
   },
   {
     label: "Frontend",
-    skills: ["React", "Next.js", "HTML/CSS", "TailwindCSS", "Electron"],
+    skills: [
+      { name: "React", core: true },
+      { name: "Next.js", core: true },
+      { name: "TailwindCSS" },
+      { name: "HTML/CSS" },
+      { name: "Electron" },
+    ],
   },
   {
     label: "Backend",
-    skills: ["Node.js", "Express.js", "Axum", "Tokio", "WebSockets", "REST APIs"],
+    skills: [
+      { name: "Node.js", core: true },
+      { name: "Axum", core: true },
+      { name: "Tokio", core: true },
+      { name: "Express.js" },
+      { name: "WebSockets" },
+      { name: "REST APIs" },
+    ],
   },
   {
-    label: "Infra",
-    skills: ["MongoDB", "SQLite", "AWS", "Git", "CI/CD Pipelines", "IntelliJ"],
+    label: "Tooling",
+    skills: [
+      { name: "PostgreSQL", core: true },
+      { name: "AWS", core: true },
+      { name: "MongoDB" },
+      { name: "SQLite" },
+      { name: "Git" },
+      { name: "CI/CD Pipelines" },
+    ],
   },
 ];
 
@@ -40,13 +71,13 @@ export default function Skills() {
       {/* Heading with eyebrow */}
       <div className="mb-10">
         <motion.span
-          className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-3"
+          className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
-          Technical Stack
+          Stack
         </motion.span>
         <motion.h2
           className="text-[clamp(2.25rem,5vw,3rem)] font-bold leading-[1.1] tracking-[-0.04em]"
@@ -55,7 +86,7 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
-          My skills
+          What I build with
         </motion.h2>
       </div>
 
@@ -64,11 +95,11 @@ export default function Skills() {
         {categories.map((cat, i) => (
           <div
             key={cat.label}
-            className="flex flex-col sm:grid sm:grid-cols-[140px_1fr] gap-3 sm:gap-8 py-5 sm:py-6"
+            className="flex flex-col sm:grid sm:grid-cols-[140px_1fr] sm:items-baseline gap-3 sm:gap-8 py-5 sm:py-6"
           >
             {/* Category label */}
             <motion.span
-              className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-zinc-400 dark:text-zinc-600 pt-px leading-none"
+              className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-500"
               initial={{ opacity: 0, x: -6 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -87,11 +118,15 @@ export default function Skills() {
             >
               {cat.skills.map((skill) => (
                 <motion.span
-                  key={skill}
+                  key={skill.name}
                   variants={chipVariants}
-                  className="font-mono text-[0.65rem] uppercase tracking-[0.15em] bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700 px-2.5 py-1 rounded hover:border-zinc-400 dark:hover:border-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-all duration-200"
+                  className={`font-mono text-[0.62rem] uppercase tracking-[0.15em] border px-2.5 py-1 rounded ${
+                    skill.core
+                      ? "bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-700 dark:text-zinc-50 dark:border-zinc-700"
+                      : "bg-zinc-100 text-zinc-500 border-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-700"
+                  }`}
                 >
-                  {skill}
+                  {skill.name}
                 </motion.span>
               ))}
             </motion.div>

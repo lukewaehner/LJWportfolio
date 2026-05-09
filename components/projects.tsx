@@ -13,7 +13,7 @@ export default function Projects() {
       {/* Heading with eyebrow */}
       <div className="mb-10">
         <motion.span
-          className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-3"
+          className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

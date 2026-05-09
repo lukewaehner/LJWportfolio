@@ -1,7 +1,3 @@
-import React from "react";
-import { FaChartLine, FaReact, FaServer } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-
 import StockChartImg from "@/public/StockChart.png";
 import HFTLedgerImg from "@/public/rust-hft-book.png";
 import BussingNews from "@/public/BussingNews.png";
@@ -20,32 +16,28 @@ export const experiencesData = [
     title: "Backend Software Engineer",
     location: "Smartleaf, Boston, MA",
     description:
-      "Engineered tree-structured portfolio allocation reporting and a Cash Sweep automation system selecting target money market funds across $110B in AUM. Built a PostgreSQL A/B testing harness replaying ~1M portfolios against PG14 and PG18 in parallel to validate parity before upgrade. Serve as release master and lead weekly incident triage.",
-    icon: React.createElement(FaServer),
+      "Engineered tree-structured allocation reporting and a Cash Sweep automation engine spanning $110B AUM. Built a PG14 to PG18 A/B harness replaying ~1M portfolios to validate upgrade parity. Release master.",
     date: "Jan 2026 – Present",
   },
   {
     title: "Full Stack Software Engineer (Founder)",
     location: "Code Works, Boston, MA",
     description:
-      "Developed custom CRM systems using Google Workspace APIs and App Script that automated onboarding, scheduling, and reporting — reducing setup time by 55%. Later distributed to 100+ professionals serving hundreds of downstream clients across unified Sheets, Gmail, and Calendar workflows.",
-    icon: React.createElement(FaReact),
+      "Built a Google Workspace and App Script CRM that cut onboarding 55%. Distributed to 100+ professionals serving hundreds of downstream clients across unified Sheets, Gmail, and Calendar workflows.",
     date: "May 2024 – Sep 2025",
   },
   {
     title: "Computer Science & Fintech Student",
     location: "Northeastern University, Boston, MA",
     description:
-      "Pursuing dual degree in Computer Science and Fintech with a 3.83/4.00 GPA. Dean's List, Manresa Scholar, and Best Business Plan Award recipient. Coursework spans algorithms, databases, computer systems, mobile development, and fintech innovation.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2024 – Dec 2026",
+      "Dual degree in Computer Science and Fintech, 3.83/4.00 GPA. Dean's List, Manresa Scholar, Best Business Plan Award.",
+    date: "Sep 2024 – Dec 2026",
   },
   {
     title: "Wealth Management Intern",
     location: "Riverside Financial, Riverside, CT",
     description:
-      "Automated ETF data collection by integrating the Morningstar API with VBA and Excel, reducing manual retrieval time by 70%. Conducted technical analysis (RSI, MACD) and portfolio risk assessment supporting $100M+ in retirement assets, delivering daily market insights to senior advisors.",
-    icon: React.createElement(FaChartLine),
+      "Automated ETF data collection via Morningstar API and VBA, cutting manual retrieval 70%. Technical analysis (RSI, MACD) and risk assessment supporting $100M+ in retirement assets.",
     date: "May 2023 – Aug 2023",
   },
 ] as const;

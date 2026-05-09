@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="flex flex-col gap-6">
           <div>
             <motion.span
-              className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-3"
+              className="inline-block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-3"
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -60,7 +60,7 @@ export default function Contact() {
               href="mailto:luke.waehner@gmail.com"
               className="group inline-flex items-center gap-2 text-zinc-900 dark:text-zinc-100 font-medium text-[0.95rem] hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
             >
-              <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-zinc-400 dark:text-zinc-600 group-hover:text-blue-500 dark:group-hover:text-blue-500 transition-colors duration-200">
+              <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 dark:group-hover:text-blue-500 transition-colors duration-200">
                 Email
               </span>
               luke.waehner@gmail.com
@@ -90,7 +90,7 @@ export default function Contact() {
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="senderEmail"
-              className="font-mono text-[0.65rem] uppercase tracking-widest text-zinc-400 dark:text-zinc-600"
+              className="font-mono text-[0.65rem] uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
             >
               Your email
             </label>
@@ -108,7 +108,7 @@ export default function Contact() {
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="message"
-              className="font-mono text-[0.65rem] uppercase tracking-widest text-zinc-400 dark:text-zinc-600"
+              className="font-mono text-[0.65rem] uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
             >
               Message
             </label>

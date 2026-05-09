@@ -59,12 +59,12 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="w-full max-w-5xl mb-28 sm:mb-40 scroll-mt-[100rem]"
+      className="w-full max-w-5xl mb-28 sm:mb-40 scroll-mt-28 sm:scroll-mt-36"
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-center py-10 lg:py-20">
 
         {/* Left: text */}
-        <div className="flex flex-col gap-6 lg:gap-7">
+        <div className="flex flex-col">
 
           {/* Eyebrow */}
           <motion.div
@@ -72,15 +72,16 @@ export default function Intro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
-            <span className="inline-flex items-center gap-3 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">
-              <span className="h-px w-8 bg-zinc-400 dark:bg-zinc-600" />
-              CS + Fintech · Northeastern University
+            <span className="inline-flex items-center gap-2.5 font-mono text-[0.68rem] uppercase tracking-[0.15em] text-zinc-500">
+              <span>CS + Fintech</span>
+              <span aria-hidden="true" className="inline-block h-2.5 w-px bg-zinc-300 dark:bg-zinc-700" />
+              <span>Northeastern University</span>
             </span>
           </motion.div>
 
           {/* Name */}
           <motion.h1
-            className="text-[clamp(2.8rem,7vw,5.5rem)] font-bold tracking-tighter leading-[0.88] text-zinc-900 dark:text-zinc-50"
+            className="mt-2 lg:mt-3 text-[clamp(2.8rem,7vw,5.5rem)] font-bold tracking-tighter leading-[0.88] text-zinc-900 dark:text-zinc-50"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
@@ -92,7 +93,7 @@ export default function Intro() {
 
           {/* Rotating role */}
           <motion.p
-            className="text-xl sm:text-2xl text-zinc-500 dark:text-zinc-400 font-light min-h-[1.75rem]"
+            className="mt-3 lg:mt-4 text-xl sm:text-2xl text-zinc-500 dark:text-zinc-400 font-light min-h-[1.75rem] sm:min-h-[2rem]"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
@@ -100,32 +101,23 @@ export default function Intro() {
             <RotatingRole roles={roles} />
           </motion.p>
 
-          {/* Availability badge — floats continuously after entrance */}
+          {/* Availability badge */}
           <motion.div
+            className="mt-7 lg:mt-9"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
-            <motion.div
-              animate={{ y: [0, -5] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-              className="inline-flex"
-            >
-              <div className="inline-flex items-center gap-2.5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-2 shadow-sm">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                  Available · July 2026
-                </span>
-              </div>
-            </motion.div>
+            <div className="inline-flex items-center bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-2 shadow-sm">
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Open to roles · July 2026
+              </span>
+            </div>
           </motion.div>
 
           {/* CTAs — each button staggers in individually */}
           <motion.div
-            className="flex flex-wrap items-center gap-3 pt-1"
+            className="mt-5 lg:mt-6 flex flex-wrap items-center gap-3"
             variants={ctaContainer}
             initial="hidden"
             animate="show"
@@ -133,7 +125,7 @@ export default function Intro() {
             <motion.div variants={ctaItem}>
               <Link
                 href="#contact"
-                className="group inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-700 dark:hover:bg-zinc-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)] active:scale-[0.98] active:translate-y-0 transition-all duration-200"
+                className="group inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-700 dark:hover:bg-zinc-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500/50 dark:focus-visible:ring-offset-zinc-950"
                 onClick={() => {
                   setActiveSection("Contact");
                   setTimeOfLastClick(Date.now());
@@ -148,7 +140,7 @@ export default function Intro() {
               <a
                 href="/Waehner-Luke-Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500/50 dark:focus-visible:ring-offset-zinc-950"
               >
                 Resume
                 <HiDownload className="opacity-60" />
@@ -160,7 +152,7 @@ export default function Intro() {
                 href="https://www.linkedin.com/in/lukewaehner"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500/50 dark:focus-visible:ring-offset-zinc-950"
                 aria-label="LinkedIn"
               >
                 <BsLinkedin />
@@ -172,7 +164,7 @@ export default function Intro() {
                 href="https://github.com/lukewaehner"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center justify-center w-11 h-11 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:scale-110 hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)] active:scale-[0.98] active:translate-y-0 transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500/50 dark:focus-visible:ring-offset-zinc-950"
                 aria-label="GitHub"
               >
                 <FaGithubSquare className="text-lg" />
@@ -191,16 +183,10 @@ export default function Intro() {
           <motion.div
             className="relative group"
             whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 220, damping: 16 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
-            {/* Inner dashed ring — rotates slowly, brightens on hover */}
-            <motion.div
-              className="absolute -inset-5 rounded-full border border-dashed border-zinc-300/70 dark:border-zinc-700/60 group-hover:border-zinc-400/90 dark:group-hover:border-zinc-500/80 transition-colors duration-500"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-            />
-            {/* Outer static ring — appears more on hover */}
-            <div className="absolute -inset-10 rounded-full border border-zinc-200/50 dark:border-zinc-700/30 group-hover:border-zinc-300/70 dark:group-hover:border-zinc-600/50 transition-colors duration-500" />
+            {/* Static dashed ring — brightens on hover */}
+            <div className="absolute -inset-5 rounded-full border border-dashed border-zinc-300/70 dark:border-zinc-700/60 group-hover:border-zinc-400/90 dark:group-hover:border-zinc-500/80 transition-colors duration-500" />
 
             <Image
               src={headshot}
