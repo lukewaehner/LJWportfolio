@@ -7,6 +7,7 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-geist" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
@@ -38,6 +39,7 @@ export default function RootLayout({
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
